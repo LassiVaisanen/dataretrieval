@@ -1,52 +1,8 @@
-/*
-import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
-import { MESSAGES, addDoc, collection, firestore } from './firebase/Config';
-import { useState } from 'react';
-
-export default function App() {
-  const [newMessage, setnewMessage] = useState("")
-
-  const save = async() => {
-    const docRef = await addDoc(collection(firestore, MESSAGES), {
-      text: newMessage,
-      created: serverTimestamp()
-    })
-    setnewMessage("")
-    console.log("Message saved")
-  }
-
-  return (
-    <View style={styles.container}>
-      <TextInput placeholder='Enter message' value = {newMessage} onChangeText={text => setnewMessage(text)}></TextInput>
-      <Button title="Save" onPress={save}></Button>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-
-
-*/
-
-
-
-
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { Button, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-
 import { firestore, query, onSnapshot, collection, MESSAGES, addDoc, serverTimestamp, orderBy } from './firebase/Config';
 import Constants from 'expo-constants';
-
 import { convertFirebaseTimeStampToJS } from './helpers/Functions'
 
 
@@ -105,7 +61,6 @@ export default function App() {
       </View>
     </SafeAreaView>
   )
-
 }
 
 const styles = StyleSheet.create({
